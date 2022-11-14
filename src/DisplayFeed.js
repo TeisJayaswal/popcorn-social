@@ -6,6 +6,7 @@ import ReactionSelector from "./Selector";
 import { Link } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import CommentField from "./Comment";
+import UserIcon from "./user-icon.png";
 import "./feed.css";
 // import { FacebookSelector } from "./react-reactions/src/components/facebook/FacebookSelector";
 
@@ -40,7 +41,9 @@ function DisplayFeed({
                 <img
                   className="feed-pic"
                   // src="https://www.commonsensemedia.org/sites/default/files/styles/ratio_16_9_small/public/screenshots/csm-movie/the-dark-knight-ss1.jpg"
-                  src={addSizeToGoogleProfilePic(singlePost.userPic) || ""}
+                  src={
+                    addSizeToGoogleProfilePic(singlePost.userPic) || UserIcon
+                  }
                 />
                 <div className="upper-level-text">
                   <p className="film-user">{singlePost.user}</p>

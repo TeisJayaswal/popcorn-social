@@ -475,8 +475,13 @@ function App() {
 
     await Promise.all(allFollowing);
     // return compiledFeed
-    console.log(followingArray);
-    setFeed(compiledFeed);
+    // console.log(followingArray);
+    // console.log(compiledFeed);
+    const timeSortedFeed = compiledFeed.sort(
+      (objA, objB) => objB.timestamp.toDate() - objA.timestamp.toDate()
+    );
+    // console.log(timeSortedFeed);
+    setFeed(timeSortedFeed);
     setFollowing(followingData);
     console.log(feed);
     console.log(following);
