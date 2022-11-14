@@ -1,0 +1,42 @@
+.friend-feed {
+  display: flex;
+  justify-content: center;
+}
+.user-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  align-items: center;
+  width: 90vw;
+  /* align-items: center; */
+  gap: 10vw;
+  margin-left: 15vw;
+  text-align: left;
+}
+
+.user-field h1 {
+  align-self: stretch;
+  font-size: 5vw;
+}
+.user-field button,
+.search-button {
+  border-radius: 20px;
+  width: 21vw;
+  height: 3vh;
+  font-family: 'Trebuchet MS', sans-serif;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.search {
+  margin-top: 4vh;
+}
+
+.search-button {
+  margin-left: 5vw;
+}
+
+.searcharea {
+  width: 50vw;
+  height: 3vh;
+  background-color: rgba(0, 0, 0, 0);
+}

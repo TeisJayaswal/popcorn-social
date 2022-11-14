@@ -1,0 +1,212 @@
+html {
+  min-height: 100%;
+  /* height: 125%; */
+  /* background-color: #fff7e7; */
+  background: #77A1D3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.App {
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
+
+}
+
+.app-search {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+
+.menu-list {
+  text-decoration: none;
+  list-style: none;
+}
+/* .item-image {
+  width: 10vw;
+  height: auto;
+  object-fit:cover; 
+  object-position: top;
+} */
+
+/* .item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.cart-image {
+  width: 10vw;
+  height: 10vh;
+  object-fit:cover; 
+  object-position: top;
+}
+
+.cart-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+
+.cart-box h2,
+.cart-box h3 {
+  margin: 0;
+}
+
+.item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.logo {
+  width: 10vw;
+  height: auto;
+  margin-top: 1vh;
+  
+}
+
+.film-header {
+  inline-size: 10vw;
+  overflow-wrap: break-word;
+}
+
+.similar-header {
+  text-align: center;
+}
+
+.single-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+/* 
+.single-post input {
+  overflow: visible;
+  padding: 6px 0 2px 8px;
+} */
+
+.friend-feed .film-header{
+  flex-direction: column;
+  inline-size: 20vw;
+
+}
+
+.top-bar {
+  display: flex;
+}
+
+.menu-list {
+  display: flex;
+  margin-top: 5vh;
+  align-items: flex-start;
+  gap: 5vw;
+  font-size: 1.2vw;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.menu-list a {
+  text-decoration: none;
+}
+
+.menu-list a:visited {
+  color:black
+}
+
+.filmTitlePost {
+  display: inline-block;
+}
+
+.add-post-button,
+.post-section button {
+  font-size: 2vw;
+  font-family: 'Trebuchet MS', sans-serif;
+
+  background-color: rgba(85, 219, 252, 0);
+  
+  /* padding: 20px; */
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filmtitlearea {
+  border: 0;
+}
+.recommend,
+.filmtitlearea {
+  margin-left: 2vw;
+}
+.post-section textarea {
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-bottom: 2vh;
+  background-color: rgba(85, 219, 252, 0.416);
+  width: 50vw;
+  height: 10vh;
+}
+
+/* .search-button {} */
+@media screen and (max-width: 414px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .menu-list {
+    flex-direction: column;
+    /* align-content: center; */
+    align-items: center;
+    margin-top: 0;
+    gap: 1vh;
+    font-size: 2.8vw;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-right: 9%;
+  }
+
+  .menu-list li a {
+    width: 100%;
+    color: black;
+  }
+
+  .menu-list a:visited {
+    color:black
+  }
+  
+  .logo {
+  width: 25vw;
+  height: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  justify-self: center;
+  }
+
+  .add-post-button {
+    font-size: 5vw;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding: 10%;    
+    /* padding: 20px; */
+    border-radius: 25px;
+    letter-spacing: 1.5px;
+    width: 20vw;
+    cursor: pointer;
+  }
+  .post-section button {
+    font-size: 5vw;
+    font-family: 'Trebuchet MS', sans-serif;
+    /* padding: 10%;     */
+    /* padding: 20px; */
+    border-radius: 25px;
+    letter-spacing: 1.5px;
+    width: 20vw;
+    cursor: pointer;
+  }
+}

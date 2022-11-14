@@ -1,0 +1,27 @@
+.one-film button {
+  border-radius: 20px;
+  width: 24vw;
+  height: 8vh;
+  font-family: 'Trebuchet MS', sans-serif;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.film-info img {
+  width: 50vw;
+  max-height: 40vh;
+  margin-left: 1vw;
+}
+.film-info {
+  display: flex;
+  width: 100%;
+    /* justify-content: start; */
+  gap: 5vw;
+  text-align: left;
+  margin-bottom: 3vh;
+}
+
+.film-info-text {
+  display: inline-block ;
+  /* font-size: vw; */
+  
+}
