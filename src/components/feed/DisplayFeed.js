@@ -6,8 +6,8 @@ import ReactionSelector from "./Selector";
 import { Link } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import CommentField from "./Comment";
-import UserIcon from "./user-icon.png";
-import "./feed.css";
+import UserIcon from "../../images/user-icon.png";
+import "../../stylesheets/feed.css";
 // import { FacebookSelector } from "./react-reactions/src/components/facebook/FacebookSelector";
 
 DisplayFeed.propTypes = {
@@ -113,7 +113,6 @@ function DisplayFeed({
                             }
                           ></img>
                           <div className="comment-text">
-                            {console.log(singleComment.comment)}
                             <p className="comment-user">{singleComment.by}</p>
                             <p className="comment-content">
                               {singleComment.comment}

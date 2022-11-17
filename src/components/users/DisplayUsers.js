@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import React from "react";
-import db from "./firebase.config";
+import db from "../../firebase.config";
 import PropTypes from "prop-types";
 import { collection, query, where } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import "./feed.css";
-import "./users.css";
+import "../../stylesheets/feed.css";
+import "../../stylesheets/users.css";
 
 DisplayUsers.propTypes = {
   users: PropTypes.array.isRequired,

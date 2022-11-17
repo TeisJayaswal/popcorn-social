@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import "./MovieGrid.css";
+import "../../stylesheets/MovieGrid.css";
 
 function SearchGrid({
   movies,
@@ -9,10 +9,6 @@ function SearchGrid({
   addFilmToPost,
   setSearchResults,
 }) {
-  // console.log(movies);
-  // console.log(`here is my watchlist from moviegrid`);
-  console.log(typeof addFilmToPost);
-
   const handleClick = (event, film) => {
     console.log(film);
     const filmToPost = film;

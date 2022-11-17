@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import db from "./firebase.config";
+import db from "../../firebase.config";
 import PropTypes from "prop-types";
 
 Profile.propTypes = {

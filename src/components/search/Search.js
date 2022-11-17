@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import "./App.css";
-import "./users.css";
+import "../../stylesheets/App.css";
+import "../../stylesheets/users.css";
 
 const Search = (props) => {
   const [searchValue, setSearchValue] = useState("");

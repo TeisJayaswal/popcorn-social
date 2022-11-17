@@ -16,10 +16,10 @@ import { FacebookSelector, FacebookCounter } from "@charkour/react-reactions";
 import PropTypes from "prop-types";
 import { getAuth } from "firebase/auth";
 import _ from "lodash";
-import db from "./firebase.config";
+import db from "../../firebase.config";
 import { async } from "@firebase/util";
-import ReactIcon from "./surprise_react.png";
-import "./feed.css";
+import ReactIcon from "../../images/surprise_react.png";
+import "../../stylesheets/feed.css";
 
 ReactionSelector.propTypes = {
   feed: PropTypes.array.isRequired,

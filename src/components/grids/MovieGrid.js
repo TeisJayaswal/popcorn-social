@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
-import "./MovieGrid.css";
+import "../../stylesheets/MovieGrid.css";
 
-function MovieGrid({ movies, watchlist, setFilmToShow }) {
+function MovieGrid({ movies, setFilmToShow }) {
   // console.log(movies);
   // console.log(`here is my watchlist from moviegrid`);
   // console.log(setFilmToShow);

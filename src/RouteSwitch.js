@@ -1,21 +1,20 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import MovieGrid from "./MovieGrid";
-import DisplayFilm from "./OneFilm";
-import AppSearch from "./AppSearch";
-import Post from "./Post";
-import DisplayFeed from "./DisplayFeed";
-import DisplayUsers from "./DisplayUsers";
-import Profile from "./Profile";
-import Logo from "./Popcorn-link.png";
+import DisplayFilm from "./components/film/OneFilm";
+import AppSearch from "./components/search/AppSearch";
+import Post from "./components/post/Post";
+import DisplayFeed from "./components/feed/DisplayFeed";
+import DisplayUsers from "./components/users/DisplayUsers";
+import Profile from "./components/profile/Profile";
+import Logo from "./images/Popcorn-link.png";
 // import Dropdown from "react-bootstrap/Dropdown";
-import "./App.css";
+import "./stylesheets/App.css";
+import Watchlist from "components/watchlist/Watchlist";
 
 // import ReactionSelector from "./Selector";
 
 const RouteSwitch = ({
-  upcoming,
   addFilmToWatchList,
   watchlist,
   feed,
@@ -28,9 +27,7 @@ const RouteSwitch = ({
   followUser,
   unfollowUser,
   following,
-  fetchUserData,
   fetchFeed,
-  updateFeed,
   addCommentToPost,
   addSizeToGoogleProfilePic,
   setFilmToShow,
@@ -50,9 +47,6 @@ const RouteSwitch = ({
           <li>
             <Link to="/search">SEARCH</Link>
           </li>
-          {/* <li>
-            <Link to="/upcoming">UPCOMING</Link>
-          </li> */}
           <li>
             <Link to="/watchlist">WATCHLIST</Link>
           </li>
@@ -69,18 +63,6 @@ const RouteSwitch = ({
 
       <Routes>
         <Route
-          path="/upcoming"
-          element={
-            <>
-              <MovieGrid
-                movies={upcoming}
-                watchlist={watchlist}
-                addFilmToWatchList={addFilmToWatchList}
-              />
-            </>
-          }
-        />
-        <Route
           path="/search"
           element={<AppSearch setFilmToShow={setFilmToShow} />}
         />
@@ -89,28 +71,20 @@ const RouteSwitch = ({
           element={
             <>
               <p className="feed-header">WATCHLIST</p>
-              <MovieGrid
-                setFilmToShow={setFilmToShow}
-                movies={watchlist}
-                addFilmToWatchList={addFilmToWatchList}
-                removeFilmFromWatchList={removeFilmFromWatchList}
-              />
+              <Watchlist setFilmToShow={setFilmToShow} movies={watchlist} />
             </>
           }
         />
-        <Route
-          path={`user/:userId`}
-          element={<Profile fetchUserData={fetchUserData} />}
-        />
+        <Route path={`user/:userId`} element={<Profile />} />
         <Route
           path={`video/:filmId`}
           element={
             <DisplayFilm
-              upcoming={upcoming}
               watchlist={watchlist}
               addFilmToWatchList={addFilmToWatchList}
               removeFilmFromWatchList={removeFilmFromWatchList}
               movieForMoviePage={movieForMoviePage}
+              setFilmToShow={setFilmToShow}
             />
           }
         />
@@ -119,7 +93,6 @@ const RouteSwitch = ({
           element={
             <Post
               feed={feed}
-              setFeed={setFeed}
               addPostToFeed={addPostToFeed}
               selectedMovie={selectedMovie}
               addFilmToPost={addFilmToPost}
@@ -132,10 +105,7 @@ const RouteSwitch = ({
           element={
             <DisplayFeed
               feed={feed}
-              setFeed={setFeed}
               fetchFeed={fetchFeed}
-              addPostToFeed={addPostToFeed}
-              updateFeed={updateFeed}
               setFilmToShow={setFilmToShow}
               addCommentToPost={addCommentToPost}
               addSizeToGoogleProfilePic={addSizeToGoogleProfilePic}
@@ -154,41 +124,6 @@ const RouteSwitch = ({
             />
           }
         />
-        {/* element={<DisplayFilm upcoming={upcoming} id={upcoming.id} />} */}
-
-        {/* <Route
-          path="/fruits"
-          element={
-            <ItemGrid
-              items={fruitItems}
-              allItems={allItems}
-              cart={cart}
-              addItemToCart={addItemToCart}
-            />
-          }
-        /> */}
-        {/* <Route
-          path="/vegetables"
-          element={
-            <ItemGrid
-              items={vegetableItems}
-              allItems={allItems}
-              cart={cart}
-              addItemToCart={addItemToCart}
-            />
-          }
-        /> */}
-        {/* <Route
-          path="/cart"
-          element={
-            <DisplayCart
-              allItems={allItems}
-              cart={cart}
-              addItemToCart={addItemToCart}
-              removeItemFromCart={removeItemFromCart}
-            />
-          }
-        /> */}
       </Routes>
     </BrowserRouter>
   );

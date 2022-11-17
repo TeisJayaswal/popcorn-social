@@ -1,17 +1,12 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
+import MovieGrid from "../grids/MovieGrid";
 import Search from "./Search";
-import SearchGrid from "./SearchGrid";
-import PropTypes from "prop-types";
 
 const apiKey = `0452af7a26b17e3bde1121a0ca08fb46`;
 
-PostSearch.propTypes = {
-  selectedMovie: PropTypes.array.isRequired,
-  addFilmToPost: PropTypes.func.isRequired,
-};
-
-function PostSearch({ selectedMovie, addFilmToPost }) {
+const AppSearch = ({ setFilmToShow }) => {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -21,17 +16,17 @@ function PostSearch({ selectedMovie, addFilmToPost }) {
     setLoading(true);
     setErrorMessage(null);
     const formattedSearchValue = searchValue.split(" ").join("+");
-    // console.log(
-    //   fetch(
-    //     `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${formattedSearchValue}    `
-    //   ).then((response) => response.json())
-    // );
-    Promise.all([
-      fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchValue}    `
-      ),
+    console.log(
       fetch(
         `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${formattedSearchValue}    `
+      ).then((response) => response.json())
+    );
+    Promise.all([
+      fetch(
+        `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${formattedSearchValue}    `
+      ),
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchValue}    `
       ),
     ])
       .then(function (responses) {
@@ -50,7 +45,6 @@ function PostSearch({ selectedMovie, addFilmToPost }) {
         setMovies(collapsedArray);
         setSearchResults(collapsedArray);
       });
-
     // fetch(
     //   `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchValue}    `
     // )
@@ -74,19 +68,16 @@ function PostSearch({ selectedMovie, addFilmToPost }) {
           <span>loading...</span>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
-        ) : searchResults.length < 1 ? (
-          <div></div>
         ) : (
-          <SearchGrid
-            movies={searchResults}
-            selectedMovie={selectedMovie}
-            addFilmToPost={addFilmToPost}
-            setSearchResults={setSearchResults}
+          <MovieGrid
+            movies={movies}
+            setFilmToShow={setFilmToShow}
+            watchlist={undefined}
           />
         )}
       </div>
     </div>
   );
-}
+};
 
-export default PostSearch;
+export default AppSearch;

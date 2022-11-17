@@ -15,10 +15,10 @@ import firebase from "firebase/compat/app";
 import PropTypes from "prop-types";
 import { getAuth } from "firebase/auth";
 import _ from "lodash";
-import db from "./firebase.config";
+import db from "../../firebase.config";
 import { async } from "@firebase/util";
-import CommentIcon from "./comment_icon2.png";
-import "./feed.css";
+import CommentIcon from "../../images/comment_icon.png";
+import "../../stylesheets/feed.css";
 
 function CommentField({ singlePost, addCommentToPost }) {
   const [showCommentField, setShowCommentField] = useState(false);
